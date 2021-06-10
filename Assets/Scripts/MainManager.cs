@@ -72,6 +72,7 @@ public class MainManager : MonoBehaviour
 
                 PlayerPrefs.SetString("topName",oldHighScorer);
                 PlayerPrefs.SetInt("topScore",highScore);
+                MyScoreText.text = "HIGH SCORE  " + oldHighScorer +"  " + highScore;
 
         
 
@@ -92,7 +93,7 @@ public class MainManager : MonoBehaviour
           //  pg2name = oldHighScorer;
 
         highScore = m_Points;}
-        ScoreText.text = $"Score : {m_Points}";
+        ScoreText.text = $"Your Score : {m_Points}";
         string pg2name = PlayerPrefs.GetString("username");
         MyScoreText.text = "HIGH SCORE  " + oldHighScorer +"  " + highScore;
     }
