@@ -20,7 +20,7 @@ public class MainManager : MonoBehaviour
 
    // my added variables start here       pg
    
-    public int highScore;
+    public int highScore = 11;
 
     public Text MyScoreText;
     public string pg2name;
@@ -77,13 +77,20 @@ public class MainManager : MonoBehaviour
     {
         m_Points += point;
         if (m_Points> highScore){
-           // public string pg2name;
-          //  pg2name = oldHighScorer;
+            highScore = m_Points;
+            PlayerPrefs.SetString("topName",oldHighScorer);
+            PlayerPrefs.SetInt("topScore",highScore);
+            
+            
+            
+            }
 
-        highScore = m_Points;}
         ScoreText.text = $"Your Score : {m_Points}";
         string pg2name = PlayerPrefs.GetString("username");
-        MyScoreText.text = "HIGH SCORE  " + oldHighScorer +"  " + highScore;
+
+
+        MyScoreText.text = "HIGH S1CORE  " + oldHighScorer;
+        // +"  " + highScore;
     }
  
     public void GameOver()
