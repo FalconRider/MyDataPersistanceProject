@@ -18,6 +18,13 @@ public class MainManager : MonoBehaviour
     
     private bool m_GameOver = false;
 
+// my added variables start here       pg
+   // public string hsPlayer= "Fritz" ;
+    public int highScore;
+
+    public Text MyScoreText;
+    public string pg2name;
+    public string oldHighScorer;
     
     // Start is called before the first frame update
     void Start()
@@ -58,6 +65,21 @@ public class MainManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+                // saves HSname and HS
+                Debug.Log("  at end"+oldHighScorer);
+                Debug.Log(highScore);
+
+                PlayerPrefs.SetString("topName",oldHighScorer);
+                PlayerPrefs.SetInt("topScore",highScore);
+
+        
+
+       
+       
+         PlayerPrefs.Save();
+
+
             }
         }
     }
@@ -65,9 +87,16 @@ public class MainManager : MonoBehaviour
     void AddPoint(int point)
     {
         m_Points += point;
-        ScoreText.text = $"Score : {m_Points}";
-    }
+        if (m_Points> highScore){
+           // public string pg2name;
+          //  pg2name = oldHighScorer;
 
+        highScore = m_Points;}
+        ScoreText.text = $"Score : {m_Points}";
+        string pg2name = PlayerPrefs.GetString("username");
+        MyScoreText.text = "HIGH SCORE  " + oldHighScorer +"  " + highScore;
+    }
+ 
     public void GameOver()
     {
         m_GameOver = true;

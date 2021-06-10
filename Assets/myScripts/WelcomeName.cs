@@ -12,7 +12,7 @@ public class WelcomeName : MonoBehaviour
  
     void Start()
     {
-      string pg2name = PlayerPrefs.GetString("username");  
+     // string pg2name = PlayerPrefs.GetString("username");  
     }
 
     
@@ -21,7 +21,7 @@ public class WelcomeName : MonoBehaviour
         string pg2name = PlayerPrefs.GetString("username");
 
        // int score = PlayerPrefs.GetInt("score");
-        textDisplay.GetComponent<Text>().text = "Welcome   "+ pg2name +"  to the game " ;
+        textDisplay.GetComponent<Text>().text = "Welcome  "+ pg2name  ;
        
 
     }

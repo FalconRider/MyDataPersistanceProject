@@ -1,6 +1,9 @@
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+// ui
+using UnityEngine.UI;
 
  public class MoveToGameScreen : MonoBehaviour {
 
