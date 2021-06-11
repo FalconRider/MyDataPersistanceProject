@@ -20,15 +20,21 @@ public class MainManager : MonoBehaviour
 
    // my added variables start here       pg
    
-    public int highScore = 11;
+    public int hiScore = 11;
 
     public Text MyScoreText;
-    public string pg2name;
-    public string oldHighScorer = "Fritz";
+    public string player;
+    public string hiPlayer;
     
     // Start is called before the first frame update
     void Start()
     {
+
+
+        Debug.Log("      MainStart  "   );
+
+
+
         const float step = 0.6f;
         int perLine = Mathf.FloorToInt(4.0f / step);
         
@@ -63,34 +69,45 @@ public class MainManager : MonoBehaviour
         else if (m_GameOver)
         {
             if (Input.GetKeyDown(KeyCode.Space))
-            {
+            {   
+                PlayerPrefs.SetString("topName",player);
+                PlayerPrefs.SetInt("topScore",hiScore);
+
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
-                // saves HSname and HS
+                
                
 
             }
+        if (m_Points> hiScore){
+            player = hiPlayer;
+            hiScore = m_Points;
+            PlayerPrefs.SetString("topName",player);
+            PlayerPrefs.SetInt("topScore",hiScore);
+            
+            
+            
+            }    
         }
     }
 
     void AddPoint(int point)
     {
+       // public string player;
         m_Points += point;
-        if (m_Points> highScore){
-            highScore = m_Points;
-            PlayerPrefs.SetString("topName",oldHighScorer);
-            PlayerPrefs.SetInt("topScore",highScore);
-            
-            
-            
-            }
+        if (m_Points> hiScore){
+           // player = hiPlayer;
+            hiScore = m_Points;}
+           // PlayerPrefs.SetString("topName",player);
+          //  PlayerPrefs.SetInt("topScore",hiScore);
+        
 
         ScoreText.text = $"Your Score : {m_Points}";
-        string pg2name = PlayerPrefs.GetString("username");
+        string player = PlayerPrefs.GetString("username");
 
 
-        MyScoreText.text = "HIGH S1CORE  " + oldHighScorer;
-        // +"  " + highScore;
+        MyScoreText.text = "HIGH S2CORE  " + hiPlayer +"   "+ hiScore;
+       
     }
  
     public void GameOver()

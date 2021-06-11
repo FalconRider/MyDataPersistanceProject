@@ -12,19 +12,23 @@ public class WelcomeName : MonoBehaviour
  
     void Start()
     {
-        Debug.Log("start ");
-         string player = PlayerPrefs.GetString("curPlayer");
-         textDisplay.GetComponent<Text>().text = "Welcome  "+ player  ;
-     // string pg2name = PlayerPrefs.GetString("username");  
+        Debug.Log("        Welcome Start");
+        string player = PlayerPrefs.GetString("curPlayer");
+        Debug.Log("   CP    " + player);
+        textDisplay.GetComponent<Text>().text = "Welcome  "+ player  ;
+
+        
     }
 
     
     void Update()
     {
-        //string player = PlayerPrefs.GetString("curPlayer");
+       // string player = PlayerPrefs.GetString("curPlayer");
+       textDisplay.GetComponent<Text>().text = "Welcome  "+ player  ;
 
        // int score = PlayerPrefs.GetInt("score");
-      //  textDisplay.GetComponent<Text>().text = "Welcome  "+ player  ;
+        
+        Debug.Log("WC UP notstart ");
        
 
     }
