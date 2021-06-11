@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GoToMenu : MonoBehaviour
+public class StartGame : MonoBehaviour
 {   public string player;
     public int score = 3;
     public string hiPlayer = "Darrel";
@@ -28,6 +28,6 @@ public class GoToMenu : MonoBehaviour
          Debug.Log (player +" P1S "+ score + " end" );
          Debug.Log (hiPlayer +" P2S "+ hiScore);
 
-         SceneManager.LoadScene ("MENU");
+         SceneManager.LoadScene ("main");
      }
 }

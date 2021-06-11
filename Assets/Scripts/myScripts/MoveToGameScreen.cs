@@ -1,35 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-// ui
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
- public class MoveToGameScreen : MonoBehaviour {
+public class GoToMenu : MonoBehaviour
+{   public string player;
+    public int score = 3;
+    public string hiPlayer = "Darrel";
+    public int hiScore = 7;
+    public GameObject inputField;
 
-     public string theName;
-     public GameObject inputField;
+    public void ManageSceneMenu(){
 
-
-     // on start - get previously saved HS and HS user name
-     // display hs and prev HSUN
-
-     public void ManageSceneGAME(){
-
-         // save Name,
-        theName =inputField.GetComponent <Text>().text;
-
-        PlayerPrefs.SetString("username",theName);
-
-        
-
-         Debug.Log(theName);
        
-         PlayerPrefs.Save();
+        player =inputField.GetComponent <Text>().text;
 
+        PlayerPrefs.SetString("curPlayer",player);
+        PlayerPrefs.SetInt("curScore",score);
+        PlayerPrefs.SetString("TopPlayer",hiPlayer);
+        PlayerPrefs.SetInt("TopScore",hiScore);
+        
+        PlayerPrefs.Save();
+       
+        
+         Debug.Log ("Loadscene 611 MENU hit");
+         Debug.Log (player +" P1S "+ score + " end" );
+         Debug.Log (hiPlayer +" P2S "+ hiScore);
 
-
-         Debug.Log ("Loadscene GAME hit");
          SceneManager.LoadScene ("main");
      }
- }  
+}
