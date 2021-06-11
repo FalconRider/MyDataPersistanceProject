@@ -7,21 +7,24 @@ using UnityEngine.UI;
 public class DeathZone : MonoBehaviour
 {
     public MainManager Manager;
-    public int highScore;
-    public string oldHighScorer = "Fritz";
+    public int hiScore;
+   
     public Text MyScoreText;
+
+     public string player;
+    public string hiPlayer;
 
 
     private void OnCollisionEnter(Collision other)
     {
         Destroy(other.gameObject);
-        Debug.Log("  deathzone"+oldHighScorer);
-        Debug.Log(highScore);
+        Debug.Log("  deathzone");
 
-        PlayerPrefs.SetString("topName",oldHighScorer);
-        PlayerPrefs.SetInt("topScore",highScore);
-       // MyScoreText.text = "HIGH SCORE  " + oldHighScorer +"  " + highScore;
+        PlayerPrefs.SetString("topName",player);
+        PlayerPrefs.SetInt("topScore",hiScore);
 
+       
+      
         PlayerPrefs.Save();
 
         Manager.GameOver();

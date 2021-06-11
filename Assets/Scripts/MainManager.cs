@@ -20,8 +20,10 @@ public class MainManager : MonoBehaviour
 
    // my added variables start here       pg
    
-    public int hiScore = 11;
-
+    public int hiScore;
+    public int score;
+    public GameObject textDisplay;
+     public GameObject textWDisplay;
     public Text MyScoreText;
     public string player;
     public string hiPlayer;
@@ -33,6 +35,19 @@ public class MainManager : MonoBehaviour
 
         Debug.Log("      MainStart  "   );
 
+  // string player = PlayerPrefs.GetString("curPlayer");
+
+        player = PlayerPrefs.GetString("curPlayer");
+        score = PlayerPrefs.GetInt("curScore");
+        hiPlayer = PlayerPrefs.GetString("TopPlayer");
+        hiScore = PlayerPrefs.GetInt("TopScore");
+
+
+        Debug.Log ("Loadscene MAIN");
+        Debug.Log (player +" MAIN1 "+ score + " end" );
+        Debug.Log (hiPlayer +"MAIN2 "+ hiScore);
+
+        textWDisplay.GetComponent<Text>().text = "Welcome  "+ player  ;
 
 
         const float step = 0.6f;
@@ -53,6 +68,8 @@ public class MainManager : MonoBehaviour
 
     private void Update()
     {
+         textWDisplay.GetComponent<Text>().text = "Welcome  "+ player  ;
+
         if (!m_Started)
         {
             if (Input.GetKeyDown(KeyCode.Space))
