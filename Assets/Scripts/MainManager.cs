@@ -23,20 +23,19 @@ public class MainManager : MonoBehaviour
     public int hiScore;
     public int score;
     public GameObject textDisplay;
-     public GameObject textWDisplay;
+    public Text textWDisplay;
     public Text MyScoreText;
     public string player;
     public string hiPlayer;
     
-    // Start is called before the first frame update
+   
     void Start()
     {
 
 
         Debug.Log("      MainStart  "   );
 
-  // string player = PlayerPrefs.GetString("curPlayer");
-
+  
         player = PlayerPrefs.GetString("curPlayer");
         score = PlayerPrefs.GetInt("curScore");
         hiPlayer = PlayerPrefs.GetString("TopPlayer");
@@ -44,11 +43,12 @@ public class MainManager : MonoBehaviour
 
 
         Debug.Log ("Loadscene MAIN");
-        Debug.Log (player +" MAIN1 "+ score + " end" );
-        Debug.Log (hiPlayer +"MAIN2 "+ hiScore);
+        Debug.Log (player +"    MAIN    "+ score + " end" );
+        Debug.Log (hiPlayer +"   MAIN    "+ hiScore);
 
         textWDisplay.GetComponent<Text>().text = "Welcome  "+ player  ;
-
+        textDisplay.GetComponent<Text>().text = "Welcome  "+ player ;
+        Debug.Log ("   MAIN 51    ");
 
         const float step = 0.6f;
         int perLine = Mathf.FloorToInt(4.0f / step);
@@ -67,8 +67,12 @@ public class MainManager : MonoBehaviour
     }
 
     private void Update()
-    {
-         textWDisplay.GetComponent<Text>().text = "Welcome  "+ player  ;
+    {;
+         player = PlayerPrefs.GetString("curPlayer");
+         Debug.Log("72");
+         //here
+         MyScoreText.text = "HIGH SCORE  " + hiPlayer +"   "+ hiScore;
+         textDisplay.GetComponent<Text>().text = "Welcome  "+ player ;
 
         if (!m_Started)
         {
@@ -110,10 +114,10 @@ public class MainManager : MonoBehaviour
 
     void AddPoint(int point)
     {
-       // public string player;
+       // public string player2;
         m_Points += point;
         if (m_Points> hiScore){
-           // player = hiPlayer;
+            hiPlayer = PlayerPrefs.GetString("curPlayer");
             hiScore = m_Points;}
            // PlayerPrefs.SetString("topName",player);
           //  PlayerPrefs.SetInt("topScore",hiScore);
@@ -123,7 +127,7 @@ public class MainManager : MonoBehaviour
         string player = PlayerPrefs.GetString("username");
 
 
-        MyScoreText.text = "HIGH S2CORE  " + hiPlayer +"   "+ hiScore;
+        MyScoreText.text = "HIGH SCORE  " + hiPlayer +"   "+ hiScore;
        
     }
  

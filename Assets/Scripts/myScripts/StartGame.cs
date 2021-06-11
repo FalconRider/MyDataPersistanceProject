@@ -7,9 +7,11 @@ using UnityEngine.SceneManagement;
 public class StartGame : MonoBehaviour
 {   public string player;
     public int score = 3;
-    public string hiPlayer = "Darrel";
+    public string hiPlayer = "Bob  ";
     public int hiScore = 7;
     public GameObject inputField;
+    public GameObject textDisplay;
+
 
     public void ManageSceneMenu(){
 
@@ -24,7 +26,7 @@ public class StartGame : MonoBehaviour
         PlayerPrefs.Save();
        
         
-         Debug.Log ("Loadscene 611 MENU hit");
+         Debug.Log ("Loadscene START hit");
          Debug.Log (player +" P1S "+ score + " end" );
          Debug.Log (hiPlayer +" P2S "+ hiScore);
 
