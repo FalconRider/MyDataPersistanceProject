@@ -21,10 +21,10 @@ public class Brick : MonoBehaviour
                 block.SetColor("_BaseColor", Color.white);
                 break;
             case 2:
-                block.SetColor("_BaseColor", Color.gray);
+                block.SetColor("_BaseColor", Color.white);
                 break;
             case 5:
-                block.SetColor("_BaseColor", Color.black);
+                block.SetColor("_BaseColor", Color.white);
                 break;
             default:
                 block.SetColor("_BaseColor", Color.white);
