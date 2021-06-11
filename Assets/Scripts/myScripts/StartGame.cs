@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+// *********************edited by *****************************pg 2021
 
 public class StartGame : MonoBehaviour
 {   public string player;

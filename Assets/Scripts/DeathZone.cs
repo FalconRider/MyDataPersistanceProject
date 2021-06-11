@@ -10,9 +10,11 @@ public class DeathZone : MonoBehaviour
     public int hiScore;
    
     public Text MyScoreText;
+    public int score;
 
      public string player;
     public string hiPlayer;
+    // **************************edited by ****************** pg 2021
 
 
     private void OnCollisionEnter(Collision other)
@@ -20,12 +22,17 @@ public class DeathZone : MonoBehaviour
         Destroy(other.gameObject);
         Debug.Log("  deathzone");
 
-        PlayerPrefs.SetString("topName",player);
-        PlayerPrefs.SetInt("topScore",hiScore);
+        PlayerPrefs.SetString("TopPlayer",player);
+        PlayerPrefs.SetInt("TopScore",hiScore);
+        PlayerPrefs.Save();
+
+        score = 0;
+        hiPlayer = PlayerPrefs.GetString("TopPlayer");
+        hiScore = PlayerPrefs.GetInt("TopScore");
 
        
       
-        PlayerPrefs.Save();
+       
 
         Manager.GameOver();
     }

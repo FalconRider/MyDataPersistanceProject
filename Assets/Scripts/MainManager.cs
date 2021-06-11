@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+//********************************edited by ********************* pg 2021
 
 public class MainManager : MonoBehaviour
 {
@@ -89,10 +90,14 @@ public class MainManager : MonoBehaviour
         }
         else if (m_GameOver)
         {
+           
             if (Input.GetKeyDown(KeyCode.Space))
-            {   
-                PlayerPrefs.SetString("topName",player);
-                PlayerPrefs.SetInt("topScore",hiScore);
+            {       
+                Debug.Log("TopName set");
+                Debug.Log("Topscore set ");
+                PlayerPrefs.SetString("TopName",player);
+                PlayerPrefs.SetInt("TopScore",hiScore);
+               
 
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
@@ -103,9 +108,7 @@ public class MainManager : MonoBehaviour
         if (m_Points> hiScore){
             player = hiPlayer;
             hiScore = m_Points;
-            PlayerPrefs.SetString("topName",player);
-            PlayerPrefs.SetInt("topScore",hiScore);
-            
+           
             
             
             }    
@@ -119,8 +122,7 @@ public class MainManager : MonoBehaviour
         if (m_Points> hiScore){
             hiPlayer = PlayerPrefs.GetString("curPlayer");
             hiScore = m_Points;}
-           // PlayerPrefs.SetString("topName",player);
-          //  PlayerPrefs.SetInt("topScore",hiScore);
+           
         
 
         ScoreText.text = $"Your Score : {m_Points}";
