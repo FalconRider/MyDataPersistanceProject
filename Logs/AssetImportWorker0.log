@@ -92,3 +92,33 @@ Received Import Request.
 Start importing Assets/READ ME using Guid(128892264910d0f43968a805c79cae3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f55f1a2c8f3d9152ad44d42b6cb18baf') in 0.006841 seconds
   Import took 0.034954 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 198.992585 seconds.
+  path: Assets/READ ME/NOTES
+  artifactKey: Guid(961c2c847fd34054f842ed9a40dc5bfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/READ ME/NOTES using Guid(961c2c847fd34054f842ed9a40dc5bfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9cd46e8433b70485447daa8936be000') in 0.004620 seconds
+  Import took 0.029758 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002138 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.953 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.41 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2318 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 106.9 MB.
+System memory in use after: 107.1 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 2872.
+Total: 2.848800 ms (FindLiveObjects: 0.292800 ms CreateObjectMapping: 0.123100 ms MarkObjects: 2.403800 ms  DeleteObjects: 0.026100 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
