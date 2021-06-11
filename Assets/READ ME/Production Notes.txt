@@ -1,0 +1,6 @@
+READ ME   NOTES
+-------------------------------------------------------------------
+for the Data Persistance assingment thats the last
+requirement for Unity JR PROGRAMMER badge.
+
+-------------------------
