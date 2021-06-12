@@ -20,18 +20,17 @@ public class StartGame : MonoBehaviour
        
         player = inputField.GetComponent <Text>().text;
 
-        
-        PlayerPrefs.SetString("TopPlayer",hiPlayer);
+        PlayerPrefs.SetString("topPlayer",hiPlayer);
+        PlayerPrefs.SetInt("curScore",hiScore);               
+        PlayerPrefs.SetString("curPlayer",player);
         PlayerPrefs.SetInt("curScore",score);
-        PlayerPrefs.Save();
+        
 
-        hiPlayer = PlayerPrefs.GetString("TopPlayer");
-        Debug.Log("S28 sb hp  " +hiPlayer);
+        hiPlayer = PlayerPrefs.GetString("topPlayer");       
         hiScore = PlayerPrefs.GetInt("TopScore");
-     
-       
-      
 
+         Debug.Log("S28 sb hp  " +hiPlayer);
+     
          SceneManager.LoadScene ("main");
      }
 }

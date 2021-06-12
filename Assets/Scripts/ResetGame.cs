@@ -18,10 +18,10 @@ public class ResetGame : MonoBehaviour
 
     public void ResetMyGame(){
         PlayerPrefs.DeleteAll();
-   // PlayerPrefs.SetString("TopName",hiPlayer);
-   // PlayerPrefs.SetInt("TopScore",hiScore);
-   // PlayerPrefs.Save();
-    Debug.Log("Reset18");
+        PlayerPrefs.SetString("TopName",hiPlayer);
+        PlayerPrefs.SetInt("TopScore",hiScore);
+        PlayerPrefs.Save();
+        Debug.Log("Reset18");
     }
 }
 
