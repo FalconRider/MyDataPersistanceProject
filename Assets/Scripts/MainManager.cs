@@ -34,18 +34,14 @@ public class MainManager : MonoBehaviour
     
    
     void Start()
-    {
-
-  
+    {  
         player = PlayerPrefs.GetString("curPlayer");
         score = PlayerPrefs.GetInt("curScore");
         hiPlayer = PlayerPrefs.GetString("TopPlayer");
         hiScore = PlayerPrefs.GetInt("TopScore");
 
-
-        textWDisplay.GetComponent<Text>().text = "Wel11come  "+ player  ;
-        textDisplay.GetComponent<Text>().text = "Welco22me  "+ player ;
-        
+        MyScoreText.text = "HIGH SCORE  " + hiPlayer +"   "+ hiScore;
+                
         const float step = 0.6f;
         int perLine = Mathf.FloorToInt(4.0f / step);
         
@@ -66,7 +62,7 @@ public class MainManager : MonoBehaviour
     {;
         
          MyScoreText.text = "HIGH SCORE  " + hiPlayer +"   "+ hiScore;
-         textDisplay.GetComponent<Text>().text = "Welc33ome  "+ player ;
+         textDisplay.GetComponent<Text>().text = "Welcome  "+ player ;
 
         if (!m_Started)
         {
