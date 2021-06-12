@@ -7,13 +7,8 @@ public class Paddle : MonoBehaviour
     public float Speed = 2.5f;
     public float MaxMovement = 1.5f;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
 
-    // Update is called once per frame
     void Update()
     {
         float input = Input.GetAxis("Horizontal");

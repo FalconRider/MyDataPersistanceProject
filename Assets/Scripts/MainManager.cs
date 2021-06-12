@@ -20,7 +20,7 @@ public class MainManager : MonoBehaviour
     
     private bool m_GameOver = false;
 
-   // my added variables start here       pg
+   // my added variables start here  ----------------     pg
    
     
     public GameObject textDisplay;
@@ -37,14 +37,10 @@ public class MainManager : MonoBehaviour
     {  
         player = PlayerPrefs.GetString("curPlayer");
         score = PlayerPrefs.GetInt("curScore");
-        hiPlayer = PlayerPrefs.GetString("TopPlayer");
-        Debug.Log("     MM41  sb hp "+ hiPlayer);
+        hiPlayer = PlayerPrefs.GetString("TopPlayer");        
         hiScore = PlayerPrefs.GetInt("TopScore");
 
-       // MyScoreText.text = "HIGH 1SCORE  " + hiPlayer +"   "+ hiScore;
-       
-
-
+      
         const float step = 0.6f;
         int perLine = Mathf.FloorToInt(4.0f / step);
         
@@ -65,9 +61,8 @@ public class MainManager : MonoBehaviour
     {
               
          MyScoreText.text = "HIGH SCORE TO BEAT " + hiPlayer +"   "+ hiScore;
-         textDisplay.GetComponent<Text>().text = "Wel2come  "+ player ;
-         Debug.Log("MM68" + hiPlayer+ "P " + player); 
-
+         textDisplay.GetComponent<Text>().text = "Welcome  "+ player ;
+         
         if (!m_Started)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -86,14 +81,7 @@ public class MainManager : MonoBehaviour
            
             if (Input.GetKeyDown(KeyCode.Space))
             {       
-               
-              //  PlayerPrefs.SetString("TopName",hiPlayer);
-              //  PlayerPrefs.SetInt("TopScore",hiScore);
-              //  Debug.Log("     MM41"+ hiPlayer);
-              //  PlayerPrefs.Save();
-                
-               
-
+                             
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                                
 
@@ -101,8 +89,7 @@ public class MainManager : MonoBehaviour
         if (m_Points> hiScore){
             player = hiPlayer;
             hiScore = m_Points;
-            Debug.Log("MM104");
-           
+                     
                        
             }    
         }
@@ -115,22 +102,17 @@ public class MainManager : MonoBehaviour
         if (m_Points> hiScore){
             hiPlayer = PlayerPrefs.GetString("curPlayer");
             hiScore = m_Points;
-            Debug.Log("MM116"+ hiPlayer);
-            }
+        }
          
 
         ScoreText.text = $"Your Score : {m_Points}";
         string player = PlayerPrefs.GetString("username");
-        
-       
-       // MyScoreText.text = "HIGH3 SCORE  " + hiPlayer +"   "+ hiScore; 
-        Debug.Log("MM124");      
+               
     }
  
     public void GameOver()
     {
         m_GameOver = true;
-        Debug.Log("MM130" + hiPlayer);
         PlayerPrefs.SetString("TopName",hiPlayer);
         PlayerPrefs.SetInt("TopScore",hiScore);
         PlayerPrefs.Save();

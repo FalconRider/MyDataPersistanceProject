@@ -28,7 +28,6 @@ public class DeathZone : MonoBehaviour
         score = 0;
         hiPlayer = PlayerPrefs.GetString("TopPlayer");
         hiScore = PlayerPrefs.GetInt("TopScore");
-        Debug.Log("DZ 31"+ hiPlayer);
        
         Manager.GameOver();
     }

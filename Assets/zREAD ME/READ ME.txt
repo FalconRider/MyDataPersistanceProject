@@ -7,10 +7,21 @@ requirement for Unity JR PROGRAMMER badge.
 -------------------------
 
 1. Music 
-Mine, done on Bandlab, I do all instruments and own all rights.
+Mine, Me,  done on Bandlab, I do all instruments, with a synth,  and own all rights.
 
 2. I really explored the example project and changed a whole lot of stuff
-just to see what i could change, without breking it. just for fun.
+just to see what input could change, without breking it. just for fun.
 
 3. This whole README and NOTES folder thing is an attempt to be able to figure out
 which project this was down the road, complete with a wip gameplay screenshot.
+
+4. Had a problem getting high Scorer name to show up, even though high score did.
+Since the persistance of the score met the 2nd requirement, I left it after nearly 
+wrecking everything else to find out why.
+
+5 The first reqirement - Persistance thru scenes - met by the player name moving 
+from input on the MENU scene to display on the Game(main) scene.
+
+6 The second requirement - Persitance thru shutdowns and startups - met by retaining high score.
+
+7 Reset button thrown in, cause score was getting too high for me to beat, to demo.

@@ -9,14 +9,13 @@ using UnityEngine.SceneManagement;
 public class StartGame : MonoBehaviour
 {   public string player;
     public int score = 0;
-    public string hiPlayer = "DHP";
+    public string hiPlayer;
     public int hiScore;
     public GameObject inputField;
     public GameObject textDisplay;
 
 
     public void ManageSceneMenu(){
-
        
         player = inputField.GetComponent <Text>().text;
 
@@ -28,9 +27,7 @@ public class StartGame : MonoBehaviour
 
         hiPlayer = PlayerPrefs.GetString("topPlayer");       
         hiScore = PlayerPrefs.GetInt("TopScore");
-
-         Debug.Log("S28 sb hp  " +hiPlayer);
-     
+             
          SceneManager.LoadScene ("main");
      }
 }
