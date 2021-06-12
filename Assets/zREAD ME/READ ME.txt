@@ -8,3 +8,9 @@ requirement for Unity JR PROGRAMMER badge.
 
 1. Music 
 Mine, done on Bandlab, I do all instruments and own all rights.
+
+2. I really explored the example project and changed a whole lot of stuff
+just to see what i could change, without breking it. just for fun.
+
+3. This whole README and NOTES folder thing is an attempt to be able to figure out
+which project this was down the road, complete with a wip gameplay screenshot.

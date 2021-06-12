@@ -18,11 +18,14 @@ public class StartGame : MonoBehaviour
     public void ManageSceneMenu(){
 
        
-        player =inputField.GetComponent <Text>().text;
+        player = inputField.GetComponent <Text>().text;
 
         PlayerPrefs.SetString("curPlayer",player);
         PlayerPrefs.SetInt("curScore",score);
         PlayerPrefs.Save();
+
+        hiPlayer = PlayerPrefs.GetString("TopPlayer");
+        hiScore = PlayerPrefs.GetInt("TopScore");
      
        
       

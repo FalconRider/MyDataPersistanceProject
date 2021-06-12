@@ -41,7 +41,9 @@ public class MainManager : MonoBehaviour
         hiScore = PlayerPrefs.GetInt("TopScore");
 
         MyScoreText.text = "HIGH SCORE  " + hiPlayer +"   "+ hiScore;
-                
+        Debug.Log("MM 44"); 
+
+
         const float step = 0.6f;
         int perLine = Mathf.FloorToInt(4.0f / step);
         
@@ -59,10 +61,11 @@ public class MainManager : MonoBehaviour
     }
 
     private void Update()
-    {;
+    {
         
          MyScoreText.text = "HIGH SCORE  " + hiPlayer +"   "+ hiScore;
          textDisplay.GetComponent<Text>().text = "Welcome  "+ player ;
+         Debug.Log("MM68"); 
 
         if (!m_Started)
         {
@@ -86,17 +89,17 @@ public class MainManager : MonoBehaviour
                 PlayerPrefs.SetString("TopName",hiPlayer);
                 PlayerPrefs.SetInt("TopScore",hiScore);
                 PlayerPrefs.Save();
+                Debug.Log("MM92");
                
 
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
-                
-               
+                               
 
             }
         if (m_Points> hiScore){
             player = hiPlayer;
             hiScore = m_Points;
+            Debug.Log("MM104");
            
                        
             }    
@@ -109,19 +112,25 @@ public class MainManager : MonoBehaviour
         m_Points += point;
         if (m_Points> hiScore){
             hiPlayer = PlayerPrefs.GetString("curPlayer");
-            hiScore = m_Points;}
+            hiScore = m_Points;
+            Debug.Log("MM116");}
          
 
         ScoreText.text = $"Your Score : {m_Points}";
         string player = PlayerPrefs.GetString("username");
         
        
-        MyScoreText.text = "HIGH SCORE  " + hiPlayer +"   "+ hiScore;       
+        MyScoreText.text = "HIGH SCORE  " + hiPlayer +"   "+ hiScore; 
+        Debug.Log("MM124");      
     }
  
     public void GameOver()
     {
         m_GameOver = true;
+        Debug.Log("MM130");
+        PlayerPrefs.SetString("TopName",hiPlayer);
+        PlayerPrefs.SetInt("TopScore",hiScore);
+        PlayerPrefs.Save();
         GameOverText.SetActive(true);
     }
 }
