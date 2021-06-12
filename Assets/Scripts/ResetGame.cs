@@ -14,14 +14,13 @@ public class ResetGame : MonoBehaviour
     // not zero cause i wanna know this worked
 
     public string hiPlayer = "No One Yet";
-    public int hiScore = 3;
+    public int hiScore = 4;
 
     public void ResetMyGame(){
-
-
-    PlayerPrefs.SetString("TopName",hiPlayer);
-    PlayerPrefs.SetInt("TopScore",hiScore);
-    PlayerPrefs.Save();
+        PlayerPrefs.DeleteAll();
+   // PlayerPrefs.SetString("TopName",hiPlayer);
+   // PlayerPrefs.SetInt("TopScore",hiScore);
+   // PlayerPrefs.Save();
     Debug.Log("Reset18");
     }
 }

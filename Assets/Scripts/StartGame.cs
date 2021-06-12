@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class StartGame : MonoBehaviour
 {   public string player;
     public int score = 0;
-    public string hiPlayer;
+    public string hiPlayer = "DHP";
     public int hiScore;
     public GameObject inputField;
     public GameObject textDisplay;
@@ -20,11 +20,13 @@ public class StartGame : MonoBehaviour
        
         player = inputField.GetComponent <Text>().text;
 
-        PlayerPrefs.SetString("curPlayer",player);
+        
+        PlayerPrefs.SetString("TopPlayer",hiPlayer);
         PlayerPrefs.SetInt("curScore",score);
         PlayerPrefs.Save();
 
         hiPlayer = PlayerPrefs.GetString("TopPlayer");
+        Debug.Log("S28 sb hp  " +hiPlayer);
         hiScore = PlayerPrefs.GetInt("TopScore");
      
        
