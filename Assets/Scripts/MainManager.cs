@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 //********************************edited by ********************* pg 2021
 
 public class MainManager : MonoBehaviour
@@ -21,20 +22,19 @@ public class MainManager : MonoBehaviour
 
    // my added variables start here       pg
    
-    public int hiScore;
-    public int score;
+    
     public GameObject textDisplay;
     public Text textWDisplay;
     public Text MyScoreText;
+
+    public int hiScore;
+    public int score;
     public string player;
     public string hiPlayer;
     
    
     void Start()
     {
-
-
-        Debug.Log("      MainStart  "   );
 
   
         player = PlayerPrefs.GetString("curPlayer");
@@ -43,14 +43,9 @@ public class MainManager : MonoBehaviour
         hiScore = PlayerPrefs.GetInt("TopScore");
 
 
-        Debug.Log ("Loadscene MAIN");
-        Debug.Log (player +"    MAIN    "+ score + " end" );
-        Debug.Log (hiPlayer +"   MAIN    "+ hiScore);
-
-        textWDisplay.GetComponent<Text>().text = "Welcome  "+ player  ;
-        textDisplay.GetComponent<Text>().text = "Welcome  "+ player ;
-        Debug.Log ("   MAIN 51    ");
-
+        textWDisplay.GetComponent<Text>().text = "Wel11come  "+ player  ;
+        textDisplay.GetComponent<Text>().text = "Welco22me  "+ player ;
+        
         const float step = 0.6f;
         int perLine = Mathf.FloorToInt(4.0f / step);
         
@@ -69,11 +64,9 @@ public class MainManager : MonoBehaviour
 
     private void Update()
     {;
-         player = PlayerPrefs.GetString("curPlayer");
-         Debug.Log("72");
-         //here
+        
          MyScoreText.text = "HIGH SCORE  " + hiPlayer +"   "+ hiScore;
-         textDisplay.GetComponent<Text>().text = "Welcome  "+ player ;
+         textDisplay.GetComponent<Text>().text = "Welc33ome  "+ player ;
 
         if (!m_Started)
         {
@@ -93,10 +86,10 @@ public class MainManager : MonoBehaviour
            
             if (Input.GetKeyDown(KeyCode.Space))
             {       
-                Debug.Log("TopName set");
-                Debug.Log("Topscore set ");
-                PlayerPrefs.SetString("TopName",player);
+               
+                PlayerPrefs.SetString("TopName",hiPlayer);
                 PlayerPrefs.SetInt("TopScore",hiScore);
+                PlayerPrefs.Save();
                
 
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -109,28 +102,25 @@ public class MainManager : MonoBehaviour
             player = hiPlayer;
             hiScore = m_Points;
            
-            
-            
+                       
             }    
         }
     }
 
     void AddPoint(int point)
     {
-       // public string player2;
+       
         m_Points += point;
         if (m_Points> hiScore){
             hiPlayer = PlayerPrefs.GetString("curPlayer");
             hiScore = m_Points;}
-           
-        
+         
 
         ScoreText.text = $"Your Score : {m_Points}";
         string player = PlayerPrefs.GetString("username");
-
-
-        MyScoreText.text = "HIGH SCORE  " + hiPlayer +"   "+ hiScore;
+        
        
+        MyScoreText.text = "HIGH SCORE  " + hiPlayer +"   "+ hiScore;       
     }
  
     public void GameOver()

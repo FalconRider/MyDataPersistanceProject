@@ -7,11 +7,10 @@ using UnityEngine.UI;
 public class DeathZone : MonoBehaviour
 {
     public MainManager Manager;
-    public int hiScore;
    
     public Text MyScoreText;
     public int score;
-
+    public int hiScore;
      public string player;
     public string hiPlayer;
     // **************************edited by ****************** pg 2021
@@ -20,7 +19,7 @@ public class DeathZone : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         Destroy(other.gameObject);
-        Debug.Log("  deathzone");
+       
 
         PlayerPrefs.SetString("TopPlayer",player);
         PlayerPrefs.SetInt("TopScore",hiScore);
@@ -31,9 +30,6 @@ public class DeathZone : MonoBehaviour
         hiScore = PlayerPrefs.GetInt("TopScore");
 
        
-      
-       
-
         Manager.GameOver();
     }
 }

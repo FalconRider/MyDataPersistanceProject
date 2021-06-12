@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
 // *********************edited by *****************************pg 2021
 
 public class StartGame : MonoBehaviour
 {   public string player;
-    public int score = 3;
-    public string hiPlayer = "Bob  ";
-    public int hiScore = 7;
+    public int score = 0;
+    public string hiPlayer;
+    public int hiScore;
     public GameObject inputField;
     public GameObject textDisplay;
 
@@ -21,15 +22,10 @@ public class StartGame : MonoBehaviour
 
         PlayerPrefs.SetString("curPlayer",player);
         PlayerPrefs.SetInt("curScore",score);
-        PlayerPrefs.SetString("TopPlayer",hiPlayer);
-        PlayerPrefs.SetInt("TopScore",hiScore);
-        
         PlayerPrefs.Save();
+     
        
-        
-         Debug.Log ("Loadscene START hit");
-         Debug.Log (player +" P1S "+ score + " end" );
-         Debug.Log (hiPlayer +" P2S "+ hiScore);
+      
 
          SceneManager.LoadScene ("main");
      }
